@@ -8,17 +8,49 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 100004, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100042, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100054, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 100054, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
       propertyPath: m_TagString
       value: PUNCH
+      objectReference: {fileID: 0}
+    - target: {fileID: 100062, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 100064, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
       propertyPath: m_Name
       value: Monster
       objectReference: {fileID: 0}
     - target: {fileID: 100064, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100064, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
       propertyPath: m_TagString
       value: MONSTER
+      objectReference: {fileID: 0}
+    - target: {fileID: 100078, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100108, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 100120, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 100120, guid: 114cb4bcf81314b65b611fcc4f346ee1, type: 3}
       propertyPath: m_TagString

@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class MonsterController : MonoBehaviour
+public class MonsterController : MonoBehaviour, IDamageable
 {
     public enum State { IDLE, TRACE, ATTACK, DIE };
 
@@ -29,6 +29,7 @@ public class MonsterController : MonoBehaviour
     // Monster Health
     private int hp = 100;
 
+   
     void OnEnable()
     {
         // 이벤트 연결, 수신
@@ -86,6 +87,7 @@ public class MonsterController : MonoBehaviour
                     anim.SetTrigger(hashDie);
                     agent.isStopped = true;
                     GetComponent<CapsuleCollider>().enabled = false;
+                    GameManager.Instance.Score = 50;
                     isDie = true;
                     break;
             }
@@ -126,14 +128,7 @@ public class MonsterController : MonoBehaviour
         if (coll.collider.CompareTag("BULLET"))
         {
             Destroy(coll.gameObject);
-            anim.SetTrigger(hashHit);
-
-            hp -= 20; // hp = hp - 10;
-            // 몬스터 사망
-            if (hp <= 0)
-            {
-                state = State.DIE;
-            }
+            
         }
     }
 
@@ -143,5 +138,17 @@ public class MonsterController : MonoBehaviour
         anim.SetTrigger("PlayerDie");
         StopAllCoroutines();
         agent.isStopped = true;
+    }
+
+    public void Damaged()
+    {
+        anim.SetTrigger(hashHit);
+
+        hp -= 20; // hp = hp - 10;
+                  // 몬스터 사망
+        if (hp <= 0)
+        {
+            state = State.DIE;
+        }
     }
 }

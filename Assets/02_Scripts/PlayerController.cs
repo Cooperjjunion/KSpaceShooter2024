@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
     /*
@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     public int initHp = 100;
     public int currHp = 100;
-
+    [SerializeField] private Image hpBar;
     // 델리게이트 (Delegate : 대리자)
     public delegate void PlayerDieHandler();
 
@@ -78,8 +78,10 @@ public class PlayerController : MonoBehaviour
         if (currHp > 0 && coll.CompareTag("PUNCH"))
         {
             currHp -= 10;
+            hpBar.fillAmount = (float)currHp/(float)initHp;
             if (currHp <= 0)
             {
+                GameManager.Instance.IsGameOver = true;
                 // 이벤트를 발생(호출) Raise
                 OnPlayerDie();
 
